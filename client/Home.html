@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger Support</title>
+    <link rel="stylesheet" href="public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Sidebar -->
+
+        <nav class="vertical-nav">
+            <ul>
+                <!-- Vertical Navbar -->
+                <nav class="vertical-nav">
+                    
+                    <ul>
+                        <li><a href="#"><i class="fas fa-home"></i></a></li>
+                        <li><a href="#"><i class="fas fa-message"></i></a></li>
+                        <li><a href="#"><i class="fas fa-user"></i></a></li>
+                        <!-- <li><a href="#"><i class="fas fa-paypal"></i></a></li> -->
+                        <li ><a href="#"> <i class="fas fa-contact-card" ></i> </a> </li>
+                    </ul>
+                </nav>
+            </ul>
+        </nav>
+
+        <div class="left-sidebar">
+
+            <div class="chat-list">
+
+                <div class="conv">
+                    <i class="fas fa-bars"></i>
+                    <div class="cn">Conversations</div>
+                </div>
+
+                <ul>
+                    <li>Alex</li>
+                    <li>Alejandra</li>
+                    <li>Dybala</li>
+                </ul>
+
+            </div>
+        
+        </div>
+
+        <div class="main-chat">
+            <div class="chat-header">
+                <img src="images/profile.jpg" alt="Friend Profile Picture">
+                <h5>Alejandro</h5>
+            </div>
+            <div class="chat-messages">
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <div id="chatbox">
+                            <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                        </div>
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput" class="input-box" type="text" name="msg"
+                                    placeholder="Tap 'Enter' to send a message">
+                                <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                <!-- <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i> -->
+                                <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="user-profile">
+            <img src="images/profile.jpg" alt="Profile Picture">
+            <h2>Alejandro</h2>
+            <h5>
+                <p style="color: #076427; margin-bottom: 1rem;"><i class="fas fa-circle"></i> Online</p>
+            </h5>
+            <div class="button-container">
+                <button class="icon-button">
+                    <i class="fas fa-phone"></i> Call
+                </button>
+                <button class="icon-button">
+                    <i class="fas fa-user"></i> Profile
+                </button>
+            </div>
+            <div class="customer-container">
+                <h2>Customer Details</h2>
+                <ul>
+                  <!-- <li><strong>Email:</strong><span style="margin-left: 40px">Alejandra@nith.ac.in</span></li> -->
+                  <li><strong>Name:</strong><span style="margin-left: 40px">Alejandra Garnacho</span></li>
+                  <li><strong>Mobile:</strong><span style="margin-left: 40px">9018698599</span></li>
+                </ul>
+                <!-- <a href="#" class="view-more">View More Details</a> -->
+              </div>
+        </div>
+
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="public/responses.js"></script>
+    <script src="public/chatList.js"></script>
+</body>
+
+</html>
