@@ -1,12 +1,11 @@
-import express from 'express'
+const express = require('express');
+const { signupController, loginController } = require('../controllers/user-controller.js');
 
-import { signupUser,loginUser} from '../controllers/user-controller'
-import createNewToken from '../controllers/jwt-controller'
+const userRouter = express.Router();
 
-const router = express.Router();
+userRouter.post('/signup', signupController);
+userRouter.post('/login', loginController);
+// router.post('/logout', logoutUser);
+// router.post('/token', createNewToken);
 
-router.post('/signup',signupUser);
-router.post('/login',loginUser);
-router.post('/logout', logoutUser);
-router.post('/token', createNewToken);
-export default router;
+module.exports = userRouter;

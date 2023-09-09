@@ -10,10 +10,10 @@
   <div class="container">
     <div class="login-form">
       <h2>Login</h2>
-      <form id="login-form">
+      <form id="login-form" onsubmit="handleSubmit(event)">
         <div class="form-group">
-          <label for="username">Username</label>
-          <input type="username" id="email" name="username" required>
+          <label for="email">email</label>
+          <input type="email" id="email" name="email" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
@@ -23,6 +23,16 @@
       </form>
     </div>
   </div>
-  <script src="./public/login.js"></script>
+  <!-- <script src="./public/login.js"></script> -->
+  <script>
+    // JavaScript function to handle form submission
+    function handleSubmit(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        // Perform your login logic here, and if successful:
+        alert("Login successful!");
+        window.location.href = "/client/Home.html"; // Redirect to the desired page
+    }
+</script>
 </body>
 </html>

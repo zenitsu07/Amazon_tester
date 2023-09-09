@@ -74,7 +74,7 @@ function getBotResponse(userInput) {
 
     const servicesInfo = [
         {
-            question: "Tell me more about Amazon Prime Video.",
+            question: "Tell me more about Amazon Prime Video",
             answer: "Amazon Prime Video is a streaming service that offers a wide range of movies, TV shows, and original content. It's included with an Amazon Prime membership."
         },
         {

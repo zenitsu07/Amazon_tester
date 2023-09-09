@@ -6,39 +6,28 @@ const rateLimit = require('express-rate-limit'),
  cors = require("cors"),
 bodyParser = require('body-parser'),
 crypto = require("crypto"),
-config = require("./services/config")
+user = require('./model/user.js')
 app.use(cors());
+const userRouter = require('./routes/route')
 //meta reference
-const { urlencoded, json } = require("body-parser");
+
 const { Connection } = require("./database/db");
 
-const router = express.Router()
+// const router = express.Router()
 
 app.use(express.json()); 
 app.use(cookieParser());
-// app.use("/api/v1/auth", authRouter);
-app.post("/login", router)
-app.post('/signup', router);
-
-
-app.get("/", function (_req, res) {
-  // res.json({message:"Hello"})
-  res.sendFile(path.join(__dirname, 'client', 'Home.html')); // Adjust the path to your messenger.html file
-});
-app.get("/login", function (_req, res) {
-  // res.json({message:"Hello"})
-  res.sendFile(path.join(__dirname, 'client', 'login.html')); // Adjust the path to your messenger.html file
-});
-app.get("/signup", function (_req, res) {
-  // res.json({message:"Hello"})
-  res.sendFile(path.join(__dirname, 'client', 'signUp.html')); // Adjust the path to your messenger.html file
-});
+app.use('/api/v1/auth',userRouter );
 const USERNAME = process.env.DB_USERNAME
 
 const PASSWORD = process.env.DB_PASSWORD
 
 //parse the importted usrname and password
 Connection(USERNAME, PASSWORD);
+
+app.listen(3000, function () {
+  console.log("server started at port 3000");
+})
 
 // Verify that the callback came from Facebook.
 function verifyRequestSignature(req, res, buf) {
@@ -62,17 +51,6 @@ function verifyRequestSignature(req, res, buf) {
 // app.get("/", function (_req, res) {
 //   res.render("messenger");
 // });  
-
-app.use(express.static(path.join(__dirname, 'client')));
-
-// app.get("/", function (_req, res) {
-//   res.render("messenger");
-// });
-// Respond with index file when a GET request is made to the homepage
-app.get("/", function (_req, res) {
-  // res.json({message:"Hello"})
-  res.sendFile(path.join(__dirname, 'client', 'dashboard.html')); // Adjust the path to your messenger.html file
-});
 // Add support for GET requests to our webhook
 app.get("/webhook", (req, res) => {
   
@@ -236,8 +214,5 @@ function isGuestUser(webhookEvent) {
   }
   
 
-app.listen(3000, function () {
-    console.log("server started at port 3000");
-})
 
 
